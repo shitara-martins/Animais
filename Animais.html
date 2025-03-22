@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais em Vários Idiomas com Sons</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; text-align: center; }
+        th, td { border: 1px solid #ccc; padding: 8px; cursor: pointer; }
+        th { background-color: #f0f0f0; }
+        tr:nth-child(even) { background-color: #f0f0f0; }
+        thead th:nth-child(1) { background-color: #fff9db; }
+        thead th:nth-child(2) { background-color: #dbeeff; }
+        thead th:nth-child(3) { background-color: #dbffdb; }
+        thead th:nth-child(4) { background-color: #ffdbe5; }
+        thead th:nth-child(5) { background-color: #f0dbff; }
+        thead th:nth-child(6) { background-color: #ffe8db; }
+        thead th:nth-child(7) { background-color: #f0d5f0; }
+        thead th:nth-child(8) { background-color: #dbe9ff; }
+        thead th:nth-child(9) { background-color: #ffe6db; }
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr { display: block; }
+            th { display: none; }
+            td { position: relative; padding-left: 50%; text-align: left; }
+            td::before {
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Lista de Animais em Diferentes Idiomas</h2>
+<p>Clique no emoji para ouvir o som do animal ou na palavra para ouvir a pronúncia.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Emoji</th>
+            <th>Português</th>
+            <th>Inglês</th>
+            <th>Francês</th>
+            <th>Alemão</th>
+            <th>Espanhol</th>
+            <th>Russo (romanizado)</th>
+            <th>Chinês (romanizado)</th>
+            <th>Japonês (romanizado)</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/dog.mp3')">🐶</td>
+        <td onclick="speak('Cachorro', 'pt-BR')">Cachorro</td>
+        <td onclick="speak('Dog', 'en')">Dog</td>
+        <td onclick="speak('Chien', 'fr')">Chien</td>
+        <td onclick="speak('Hund', 'de')">Hund</td>
+        <td onclick="speak('Perro', 'es')">Perro</td>
+        <td onclick="speak('Собака', 'ru')">Собака (Sobaka)</td>
+        <td onclick="speak('狗', 'zh-CN')">狗 (Gǒu)</td>
+        <td onclick="speak('犬', 'ja')">犬 (Inu)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/cat.mp3')">🐱</td>
+        <td onclick="speak('Gato', 'pt-BR')">Gato</td>
+        <td onclick="speak('Cat', 'en')">Cat</td>
+        <td onclick="speak('Chat', 'fr')">Chat</td>
+        <td onclick="speak('Katze', 'de')">Katze</td>
+        <td onclick="speak('Gato', 'es')">Gato</td>
+        <td onclick="speak('Кошка', 'ru')">Кошка (Koshka)</td>
+        <td onclick="speak('猫', 'zh-CN')">猫 (Māo)</td>
+        <td onclick="speak('猫', 'ja')">猫 (Neko)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/horse.mp3')">🐴</td>
+        <td onclick="speak('Cavalo', 'pt-BR')">Cavalo</td>
+        <td onclick="speak('Horse', 'en')">Horse</td>
+        <td onclick="speak('Cheval', 'fr')">Cheval</td>
+        <td onclick="speak('Pferd', 'de')">Pferd</td>
+        <td onclick="speak('Caballo', 'es')">Caballo</td>
+        <td onclick="speak('Лошадь', 'ru')">Лошадь (Loshad')</td>
+        <td onclick="speak('马', 'zh-CN')">马 (Mǎ)</td>
+        <td onclick="speak('馬', 'ja')">馬 (Uma)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/robin.mp3')">🐦</td>
+        <td onclick="speak('Pássaro', 'pt-BR')">Pássaro</td>
+        <td onclick="speak('Bird', 'en')">Bird</td>
+        <td onclick="speak('Oiseau', 'fr')">Oiseau</td>
+        <td onclick="speak('Vogel', 'de')">Vogel</td>
+        <td onclick="speak('Pájaro', 'es')">Pájaro</td>
+        <td onclick="speak('Птица', 'ru')">Птица (Ptitsa)</td>
+        <td onclick="speak('鸟', 'zh-CN')">鸟 (Niǎo)</td>
+        <td onclick="speak('鳥', 'ja')">鳥 (Tori)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.myinstants.com/media/sounds/bubbles.mp3')">🐟</td>
+        <td onclick="speak('Peixe', 'pt-BR')">Peixe</td>
+        <td onclick="speak('Fish', 'en')">Fish</td>
+        <td onclick="speak('Poisson', 'fr')">Poisson</td>
+        <td onclick="speak('Fisch', 'de')">Fisch</td>
+        <td onclick="speak('Pez', 'es')">Pez</td>
+        <td onclick="speak('Рыба', 'ru')">Рыба (Ryba)</td>
+        <td onclick="speak('鱼', 'zh-CN')">鱼 (Yú)</td>
+        <td onclick="speak('さかな', 'ja')">魚 (Sakana)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/lion.mp3')">🦁</td>
+        <td onclick="speak('Leão', 'pt-BR')">Leão</td>
+        <td onclick="speak('Lion', 'en')">Lion</td>
+        <td onclick="speak('Lion', 'fr')">Lion</td>
+        <td onclick="speak('Löwe', 'de')">Löwe</td>
+        <td onclick="speak('León', 'es')">León</td>
+        <td onclick="speak('Лев', 'ru')">Лев (Lev)</td>
+        <td onclick="speak('狮子', 'zh-CN')">狮子 (Shīzi)</td>
+        <td onclick="speak('ライオン', 'ja')">ライオン (Raion)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/tiger.mp3')">🐯</td>
+        <td onclick="speak('Tigre', 'pt-BR')">Tigre</td>
+        <td onclick="speak('Tiger', 'en')">Tiger</td>
+        <td onclick="speak('Tigre', 'fr')">Tigre</td>
+        <td onclick="speak('Tiger', 'de')">Tiger</td>
+        <td onclick="speak('Tigre', 'es')">Tigre</td>
+        <td onclick="speak('Тигр', 'ru')">Тигр (Tigr)</td>
+        <td onclick="speak('老虎', 'zh-CN')">老虎 (Lǎohǔ)</td>
+        <td onclick="speak('虎', 'ja')">虎 (Tora)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/rhinoceros.mp3')">🐻</td>
+        <td onclick="speak('Urso', 'pt-BR')">Urso</td>
+        <td onclick="speak('Bear', 'en')">Bear</td>
+        <td onclick="speak('Ours', 'fr')">Ours</td>
+        <td onclick="speak('Bär', 'de')">Bär</td>
+        <td onclick="speak('Oso', 'es')">Oso</td>
+        <td onclick="speak('Медведь', 'ru')">Медведь (Medved')</td>
+        <td onclick="speak('熊', 'zh-CN')">熊 (Xióng)</td>
+        <td onclick="speak('熊', 'ja')">熊 (Kuma)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/elephant.mp3')">🐘</td>
+        <td onclick="speak('Elefante', 'pt-BR')">Elefante</td>
+        <td onclick="speak('Elephant', 'en')">Elephant</td>
+        <td onclick="speak('Éléphant', 'fr')">Éléphant</td>
+        <td onclick="speak('Elefant', 'de')">Elefant</td>
+        <td onclick="speak('Elefante', 'es')">Elefante</td>
+        <td onclick="speak('Слон', 'ru')">Слон (Slon)</td>
+        <td onclick="speak('大象', 'zh-CN')">大象 (Dàxiàng)</td>
+        <td onclick="speak('象', 'ja')">象 (Zō)</td>
+    </tr>
+ <tr>
+        <td onclick="playSound('https://www.myinstants.com/media/sounds/monkey-gaga.mp3')">🐒</td>
+        <td onclick="speak('Macaco', 'pt-BR')">Macaco</td>
+        <td onclick="speak('Monkey', 'en')">Monkey</td>
+        <td onclick="speak('Singe', 'fr')">Singe</td>
+        <td onclick="speak('Affe', 'de')">Affe</td>
+        <td onclick="speak('Mono', 'es')">Mono</td>
+        <td onclick="speak('Обезьяна', 'ru')">Обезьяна (Obezyana)</td>
+        <td onclick="speak('猴子', 'zh-CN')">猴子 (Hóuzi)</td>
+        <td onclick="speak('猿', 'ja')">猿 (Saru)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/rabbit.mp3')">🐰</td>
+        <td onclick="speak('Coelho', 'pt-BR')">Coelho</td>
+        <td onclick="speak('Rabbit', 'en')">Rabbit</td>
+        <td onclick="speak('Lapin', 'fr')">Lapin</td>
+        <td onclick="speak('Kaninchen', 'de')">Kaninchen</td>
+        <td onclick="speak('Conejo', 'es')">Conejo</td>
+        <td onclick="speak('Кролик', 'ru')">Кролик (Krolik)</td>
+        <td onclick="speak('兔子', 'zh-CN')">兔子 (Tùzi)</td>
+        <td onclick="speak('兎', 'ja')">兎 (Usagi)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.myinstants.com/media/sounds/scream-of-the-red-fox.mp3')">🦊</td>
+        <td onclick="speak('Raposa', 'pt-BR')">Raposa</td>
+        <td onclick="speak('Fox', 'en')">Fox</td>
+        <td onclick="speak('Renard', 'fr')">Renard</td>
+        <td onclick="speak('Fuchs', 'de')">Fuchs</td>
+        <td onclick="speak('Zorro', 'es')">Zorro</td>
+        <td onclick="speak('Лиса', 'ru')">Лиса (Lisa)</td>
+        <td onclick="speak('狐狸', 'zh-CN')">狐狸 (Húlí)</td>
+        <td onclick="speak('狐', 'ja')">狐 (Kitsune)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/wolf.mp3')">🐺</td>
+        <td onclick="speak('Lobo', 'pt-BR')">Lobo</td>
+        <td onclick="speak('Wolf', 'en')">Wolf</td>
+        <td onclick="speak('Loup', 'fr')">Loup</td>
+        <td onclick="speak('Wolf', 'de')">Wolf</td>
+        <td onclick="speak('Lobo', 'es')">Lobo</td>
+        <td onclick="speak('Волк', 'ru')">Волк (Volk)</td>
+        <td onclick="speak('狼', 'zh-CN')">狼 (Láng)</td>
+        <td onclick="speak('狼', 'ja')">狼 (Ōkami)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/cow.mp3')">🐮</td>
+        <td onclick="speak('Vaca', 'pt-BR')">Vaca</td>
+        <td onclick="speak('Cow', 'en')">Cow</td>
+        <td onclick="speak('Vache', 'fr')">Vache</td>
+        <td onclick="speak('Kuh', 'de')">Kuh</td>
+        <td onclick="speak('Vaca', 'es')">Vaca</td>
+        <td onclick="speak('Корова', 'ru')">Корова (Korova)</td>
+        <td onclick="speak('牛', 'zh-CN')">牛 (Niú)</td>
+        <td onclick="speak('牛', 'ja')">牛 (Ushi)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/pig.mp3')">🐷</td>
+        <td onclick="speak('Porco', 'pt-BR')">Porco</td>
+        <td onclick="speak('Pig', 'en')">Pig</td>
+        <td onclick="speak('Cochon', 'fr')">Cochon</td>
+        <td onclick="speak('Schwein', 'de')">Schwein</td>
+        <td onclick="speak('Cerdo', 'es')">Cerdo</td>
+        <td onclick="speak('Свинья', 'ru')">Свинья (Svin'ya)</td>
+        <td onclick="speak('猪', 'zh-CN')">猪 (Zhū)</td>
+        <td onclick="speak('豚', 'ja')">豚 (Buta)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/sheep.mp3')">🐑</td>
+        <td onclick="speak('Ovelha', 'pt-BR')">Ovelha</td>
+        <td onclick="speak('Sheep', 'en')">Sheep</td>
+        <td onclick="speak('Mouton', 'fr')">Mouton</td>
+        <td onclick="speak('Schaf', 'de')">Schaf</td>
+        <td onclick="speak('Oveja', 'es')">Oveja</td>
+        <td onclick="speak('Овца', 'ru')">Овца (Ovtsa)</td>
+        <td onclick="speak('羊', 'zh-CN')">羊 (Yáng)</td>
+        <td onclick="speak('羊', 'ja')">羊 (Hitsuji)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/camel.mp3')">🐫</td>
+        <td onclick="speak('Camelo', 'pt-BR')">Camelo</td>
+        <td onclick="speak('Camel', 'en')">Camel</td>
+        <td onclick="speak('Chameau', 'fr')">Chameau</td>
+        <td onclick="speak('Kamel', 'de')">Kamel</td>
+        <td onclick="speak('Camello', 'es')">Camello</td>
+        <td onclick="speak('Верблюд', 'ru')">Верблюд (Verblyud)</td>
+        <td onclick="speak('骆驼', 'zh-CN')">骆驼 (Luòtuo)</td>
+        <td onclick="speak('駱駝', 'ja')">駱駝 (Rakuda)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/giraffe.mp3')">🦒</td>
+        <td onclick="speak('Girafa', 'pt-BR')">Girafa</td>
+        <td onclick="speak('Giraffe', 'en')">Giraffe</td>
+        <td onclick="speak('Girafe', 'fr')">Girafe</td>
+        <td onclick="speak('Giraffe', 'de')">Giraffe</td>
+        <td onclick="speak('Jirafa', 'es')">Jirafa</td>
+        <td onclick="speak('Жираф', 'ru')">Жираф (Zhiraf)</td>
+        <td onclick="speak('长颈鹿', 'zh-CN')">长颈鹿 (Chángjǐnglù)</td>
+        <td onclick="speak('キリン', 'ja')">キリン (Kirin)</td>
+    </tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/alligator.mp3')">🐊</td>
+    <td onclick="speak('Crocodilo', 'pt-BR')">Crocodilo</td>
+    <td onclick="speak('Crocodile', 'en')">Crocodile</td>
+    <td onclick="speak('Crocodile', 'fr')">Crocodile</td>
+    <td onclick="speak('Krokodil', 'de')">Krokodil</td>
+    <td onclick="speak('Cocodrilo', 'es')">Cocodrilo</td>
+    <td onclick="speak('Крокодил', 'ru')">Крокодил (Krokodil)</td>
+    <td onclick="speak('鳄鱼', 'zh-CN')">鳄鱼 (Èyú)</td>
+    <td onclick="speak('ワニ', 'ja')">ワニ (Wani)</td>
+</tr>	
+<tr>
+        <td onclick="playSound('https://www.myinstants.com/media/sounds/som-do-golfinho-qualidade-alta.mp3')">🐬</td>
+        <td onclick="speak('Golfinho', 'pt-BR')">Golfinho</td>
+        <td onclick="speak('Dolphin', 'en')">Dolphin</td>
+        <td onclick="speak('Dauphin', 'fr')">Dauphin</td>
+        <td onclick="speak('Delfin', 'de')">Delfin</td>
+        <td onclick="speak('Delfín', 'es')">Delfín</td>
+        <td onclick="speak('Дельфин', 'ru')">Дельфин (Del'fin)</td>
+        <td onclick="speak('海豚', 'zh-CN')">海豚 (Hǎitún)</td>
+        <td onclick="speak('イルカ', 'ja')">イルカ (Iruka)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/penguin.mp3')">🐧</td>
+        <td onclick="speak('Pinguim', 'pt-BR')">Pinguim</td>
+        <td onclick="speak('Penguin', 'en')">Penguin</td>
+        <td onclick="speak('Pingouin', 'fr')">Pingouin</td>
+        <td onclick="speak('Pinguin', 'de')">Pinguin</td>
+        <td onclick="speak('Pingüino', 'es')">Pingüino</td>
+        <td onclick="speak('Пингвин', 'ru')">Пингвин (Pingvin)</td>
+        <td onclick="speak('企鹅', 'zh-CN')">企鹅 (Qì'é)</td>
+        <td onclick="speak('ペンギン', 'ja')">ペンギン (Pengin)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/owl.mp3')">🦉</td>
+        <td onclick="speak('Coruja', 'pt-BR')">Coruja</td>
+        <td onclick="speak('Owl', 'en')">Owl</td>
+        <td onclick="speak('Hibou', 'fr')">Hibou</td>
+        <td onclick="speak('Eule', 'de')">Eule</td>
+        <td onclick="speak('Búho', 'es')">Búho</td>
+        <td onclick="speak('Сова', 'ru')">Сова (Sova)</td>
+        <td onclick="speak('猫头鹰', 'zh-CN')">猫头鹰 (Māotóuyīng)</td>
+        <td onclick="speak('フクロウ', 'ja')">フクロウ (Fukurō)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.myinstants.com/media/sounds/deer-scream.mp3')">🦌</td>
+        <td onclick="speak('Cervo', 'pt-BR')">Cervo</td>
+        <td onclick="speak('Deer', 'en')">Deer</td>
+        <td onclick="speak('Cerf', 'fr')">Cerf</td>
+        <td onclick="speak('Hirsch', 'de')">Hirsch</td>
+        <td onclick="speak('Ciervo', 'es')">Ciervo</td>
+        <td onclick="speak('Олень', 'ru')">Олень (Olen')</td>
+        <td onclick="speak('鹿', 'zh-CN')">鹿 (Lù)</td>
+        <td onclick="speak('シカ', 'ja')">鹿 (Shika)</td>
+    </tr>
+    <tr>
+        <td onclick="playSound('https://www.myinstants.com/media/sounds/turtles-mating-mp3cut.mp3')">🐢</td>
+        <td onclick="speak('Tartaruga', 'pt-BR')">Tartaruga</td>
+        <td onclick="speak('Turtle', 'en')">Turtle</td>
+        <td onclick="speak('Tortue', 'fr')">Tortue</td>
+        <td onclick="speak('Schildkröte', 'de')">Schildkröte</td>
+        <td onclick="speak('Tortuga', 'es')">Tortuga</td>
+        <td onclick="speak('Черепаха', 'ru')">Черепаха (Cherepakha)</td>
+        <td onclick="speak('乌龟', 'zh-CN')">乌龟 (Wūguī)</td>
+        <td onclick="speak('亀', 'ja')">亀 (Kame)</td>
+    </tr>
+<tr>
+                <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/lizard.mp3')">🦎</td>
+                <td onclick="speak('Lagarto', 'pt-BR')">Lagarto</td>
+                <td onclick="speak('Lizard', 'en')">Lizard</td>
+                <td onclick="speak('Lézard', 'fr')">Lézard</td>
+                <td onclick="speak('Eidechse', 'de')">Eidechse</td>
+                <td onclick="speak('Lagarto', 'es')">Lagarto</td>
+                <td onclick="speak('Ящерица', 'ru')">Ящерица (yashcheritsa)</td>
+                <td onclick="speak('蜥蜴', 'zh-CN')">蜥蜴 (xī yì)</td>
+                <td onclick="speak('トカゲ', 'ja')">トカゲ (tokage)</td>
+            </tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/crow.mp3')">🐦‍⬛</td>
+    <td onclick="speak('Corvo', 'pt-BR')">Corvo</td>
+    <td onclick="speak('Crow', 'en')">Crow</td>
+    <td onclick="speak('Corbeau', 'fr')">Corbeau</td>
+    <td onclick="speak('Krähe', 'de')">Krähe</td>
+    <td onclick="speak('Cuervo', 'es')">Cuervo</td>
+    <td onclick="speak('Ворон', 'ru')">Ворон (voron)</td>
+    <td onclick="speak('乌鸦', 'zh-CN')">乌鸦 (wū yā)</td>
+    <td onclick="speak('カラス', 'ja')">カラス (karasu)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/shark.mp3')">🦈</td>
+    <td onclick="speak('Tubarão', 'pt-BR')">Tubarão</td>
+    <td onclick="speak('Shark', 'en')">Shark</td>
+    <td onclick="speak('Requin', 'fr')">Requin</td>
+    <td onclick="speak('Hai', 'de')">Hai</td>
+    <td onclick="speak('Tiburón', 'es')">Tiburón</td>
+    <td onclick="speak('Акула', 'ru')">Акула (akula)</td>
+    <td onclick="speak('鲨鱼', 'zh-CN')">鲨鱼 (shā yú)</td>
+    <td onclick="speak('サメ', 'ja')">サメ (same)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/butterfly.mp3')">🦋</td>
+    <td onclick="speak('Borboleta', 'pt-BR')">Borboleta</td>
+    <td onclick="speak('Butterfly', 'en')">Butterfly</td>
+    <td onclick="speak('Papillon', 'fr')">Papillon</td>
+    <td onclick="speak('Schmetterling', 'de')">Schmetterling</td>
+    <td onclick="speak('Mariposa', 'es')">Mariposa</td>
+    <td onclick="speak('Бабочка', 'ru')">Бабочка (babochka)</td>
+    <td onclick="speak('蝴蝶', 'zh-CN')">蝴蝶 (hú dié)</td>
+    <td onclick="speak('蝶', 'ja')">蝶 (chou)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://cdn.pixabay.com/audio/2022/03/15/audio_81c4bdf1ed.mp3')">🐜</td>
+    <td onclick="speak('Formiga', 'pt-BR')">Formiga</td>
+    <td onclick="speak('Ant', 'en')">Ant</td>
+    <td onclick="speak('Fourmi', 'fr')">Fourmi</td>
+    <td onclick="speak('Ameise', 'de')">Ameise</td>
+    <td onclick="speak('Hormiga', 'es')">Hormiga</td>
+    <td onclick="speak('Муравей', 'ru')">Муравей (muravey)</td>
+    <td onclick="speak('蚂蚁', 'zh-CN')">蚂蚁 (mǎ yǐ)</td>
+    <td onclick="speak('アリ', 'ja')">アリ (ari)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.myinstants.com/media/sounds/gary-the-snail.mp3')">🐌</td>
+    <td onclick="speak('Caracol', 'pt-BR')">Caracol</td>
+    <td onclick="speak('Snail', 'en')">Snail</td>
+    <td onclick="speak('Escargot', 'fr')">Escargot</td>
+    <td onclick="speak('Schnecke', 'de')">Schnecke</td>
+    <td onclick="speak('Caracol', 'es')">Caracol</td>
+    <td onclick="speak('Улитка', 'ru')">Улитка (ulitka)</td>
+    <td onclick="speak('蜗牛', 'zh-CN')">蜗牛 (wō niú)</td>
+    <td onclick="speak('カタツムリ', 'ja')">カタツムリ (katatsumuri)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://cdn.pixabay.com/audio/2022/03/24/audio_06965eb02b.mp3')">🐙</td>
+    <td onclick="speak('Polvo', 'pt-BR')">Polvo</td>
+    <td onclick="speak('Octopus', 'en')">Octopus</td>
+    <td onclick="speak('Pieuvre', 'fr')">Pieuvre</td>
+    <td onclick="speak('Oktopus', 'de')">Oktopus</td>
+    <td onclick="speak('Pulpo', 'es')">Pulpo</td>
+    <td onclick="speak('Осьминог', 'ru')">Осьминог (os'minog)</td>
+    <td onclick="speak('章鱼', 'zh-CN')">章鱼 (zhāng yú)</td>
+    <td onclick="speak('タコ', 'ja')">タコ (tako)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://sounds.pond5.com/jellyfish-jiggle-underwater-bubbles-bloops-sound-effect-103005953_nw_prev.m4a')">🪼</td>
+    <td onclick="speak('Água-viva', 'pt-BR')">Água-viva</td>
+    <td onclick="speak('Jellyfish', 'en')">Jellyfish</td>
+    <td onclick="speak('Méduse', 'fr')">Méduse</td>
+    <td onclick="speak('Qualle', 'de')">Qualle</td>
+    <td onclick="speak('Medusa', 'es')">Medusa</td>
+    <td onclick="speak('Медуза', 'ru')">Медуза (meduza)</td>
+    <td onclick="speak('水母', 'zh-CN')">水母 (shuǐ mǔ)</td>
+    <td onclick="speak('クラゲ', 'ja')">クラゲ (kurage)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/humpback-whale.mp3')">🐋</td>
+    <td onclick="speak('Baleia', 'pt-BR')">Baleia</td>
+    <td onclick="speak('Whale', 'en')">Whale</td>
+    <td onclick="speak('Baleine', 'fr')">Baleine</td>
+    <td onclick="speak('Wal', 'de')">Wal</td>
+    <td onclick="speak('Ballena', 'es')">Ballena</td>
+    <td onclick="speak('Кит', 'ru')">Кит (kit)</td>
+    <td onclick="speak('鲸鱼', 'zh-CN')">鲸鱼 (jīng yú)</td>
+    <td onclick="speak('クジラ', 'ja')">クジラ (kujira)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://sounds.pond5.com/animals-ostrich-ostriches-ostrich-chick-sound-effect-066874792_nw_prev.m4a')">🦤</td>
+    <td onclick="speak('Avestruz', 'pt-BR')">Avestruz</td>
+    <td onclick="speak('Ostrich', 'en')">Ostrich</td>
+    <td onclick="speak('Autruche', 'fr')">Autruche</td>
+    <td onclick="speak('Strauß', 'de')">Strauß</td>
+    <td onclick="speak('Avestruz', 'es')">Avestruz</td>
+    <td onclick="speak('Страус', 'ru')">Страус (straus)</td>
+    <td onclick="speak('鸵鸟', 'zh-CN')">鸵鸟 (tuó niǎo)</td>
+    <td onclick="speak('ダチョウ', 'ja')">ダチョウ (dachou)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Bat.mp3')">🦇</td>
+    <td onclick="speak('Morcego', 'pt-BR')">Morcego</td>
+    <td onclick="speak('Bat', 'en')">Bat</td>
+    <td onclick="speak('Chauve-souris', 'fr')">Chauve-souris</td>
+    <td onclick="speak('Fledermaus', 'de')">Fledermaus</td>
+    <td onclick="speak('Murciélago', 'es')">Murciélago</td>
+    <td onclick="speak('Летучая мышь', 'ru')">Летучая мышь (letuchaya mysh')</td>
+    <td onclick="speak('蝙蝠', 'zh-CN')">蝙蝠 (biān fú)</td>
+    <td onclick="speak('コウモリ', 'ja')">コウモリ (koumori)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Duck.mp3')">🦆</td>
+    <td onclick="speak('Pato', 'pt-BR')">Pato</td>
+    <td onclick="speak('Duck', 'en')">Duck</td>
+    <td onclick="speak('Canard', 'fr')">Canard</td>
+    <td onclick="speak('Ente', 'de')">Ente</td>
+    <td onclick="speak('Pato', 'es')">Pato</td>
+    <td onclick="speak('Утка', 'ru')">Утка (utka)</td>
+    <td onclick="speak('鸭子', 'zh-CN')">鸭子 (yā zi)</td>
+    <td onclick="speak('アヒル', 'ja')">アヒル (ahiru)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Earthworm.mp3')">🪱</td>
+    <td onclick="speak('Minhoca', 'pt-BR')">Minhoca</td>
+    <td onclick="speak('Earthworm', 'en')">Earthworm</td>
+    <td onclick="speak('Ver de terre', 'fr')">Ver de terre</td>
+    <td onclick="speak('Regenwurm', 'de')">Regenwurm</td>
+    <td onclick="speak('Lombriz', 'es')">Lombriz</td>
+    <td onclick="speak('Червь', 'ru')">Червь (cherv')</td>
+    <td onclick="speak('蚯蚓', 'zh-CN')">蚯蚓 (qiū yǐn)</td>
+    <td onclick="speak('ミミズ', 'ja')">ミミズ (mimizu)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Spider.mp3')">🕷️</td>
+    <td onclick="speak('Aranha', 'pt-BR')">Aranha</td>
+    <td onclick="speak('Spider', 'en')">Spider</td>
+    <td onclick="speak('Araignée', 'fr')">Araignée</td>
+    <td onclick="speak('Spinne', 'de')">Spinne</td>
+    <td onclick="speak('Araña', 'es')">Araña</td>
+    <td onclick="speak('Паук', 'ru')">Паук (pauk)</td>
+    <td onclick="speak('蜘蛛', 'zh-CN')">蜘蛛 (zhī zhū)</td>
+    <td onclick="speak('クモ', 'ja')">クモ (kumo)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Bee.mp3')">🐝</td>
+    <td onclick="speak('Abelha', 'pt-BR')">Abelha</td>
+    <td onclick="speak('Bee', 'en')">Bee</td>
+    <td onclick="speak('Abeille', 'fr')">Abeille</td>
+    <td onclick="speak('Biene', 'de')">Biene</td>
+    <td onclick="speak('Abeja', 'es')">Abeja</td>
+    <td onclick="speak('Пчела', 'ru')">Пчела (pchjela)</td>
+    <td onclick="speak('蜜蜂', 'zh-CN')">蜜蜂 (mì fēng)</td>
+    <td onclick="speak('ハチ', 'ja')">ハチ (hachi)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Mouse.mp3')">🐭</td>
+    <td onclick="speak('Rato', 'pt-BR')">Rato</td>
+    <td onclick="speak('Mouse', 'en')">Mouse</td>
+    <td onclick="speak('Souris', 'fr')">Souris</td>
+    <td onclick="speak('Maus', 'de')">Maus</td>
+    <td onclick="speak('Ratón', 'es')">Ratón</td>
+    <td onclick="speak('Мышь', 'ru')">Мышь (mysh')</td>
+    <td onclick="speak('老鼠', 'zh-CN')">老鼠 (lǎo shǔ)</td>
+    <td onclick="speak('ネズミ', 'ja')">ネズミ (nezumi)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Frog.mp3')">🐸</td>
+    <td onclick="speak('Sapo', 'pt-BR')">Sapo</td>
+    <td onclick="speak('Frog', 'en')">Frog</td>
+    <td onclick="speak('Grenouille', 'fr')">Grenouille</td>
+    <td onclick="speak('Frosch', 'de')">Frosch</td>
+    <td onclick="speak('Rana', 'es')">Rana</td>
+    <td onclick="speak('Лягушка', 'ru')">Лягушка (lyagushka)</td>
+    <td onclick="speak('青蛙', 'zh-CN')">青蛙 (qīng wā)</td>
+    <td onclick="speak('カエル', 'ja')">カエル (kaeru)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Hen.mp3')">🐔</td>
+    <td onclick="speak('Galinha', 'pt-BR')">Galinha</td>
+    <td onclick="speak('Hen', 'en')">Hen</td>
+    <td onclick="speak('Poule', 'fr')">Poule</td>
+    <td onclick="speak('Huhn', 'de')">Huhn</td>
+    <td onclick="speak('Gallina', 'es')">Gallina</td>
+    <td onclick="speak('Курица', 'ru')">Курица (kuritsa)</td>
+    <td onclick="speak('母鸡', 'zh-CN')">母鸡 (mǔ jī)</td>
+    <td onclick="speak('メンドリ', 'ja')">メンドリ (mendori)</td>
+</tr>
+<tr>
+    <td onclick="playSound('https://www.google.com/logos/fnbx/animal_sounds/Turkey.mp3')">🦃</td>
+    <td onclick="speak('Peru', 'pt-BR')">Peru</td>
+    <td onclick="speak('Turkey', 'en')">Turkey</td>
+    <td onclick="speak('Dinde', 'fr')">Dinde</td>
+    <td onclick="speak('Truthahn', 'de')">Truthahn</td>
+    <td onclick="speak('Pavo', 'es')">Pavo</td>
+    <td onclick="speak('Индюк', 'ru')">Индюк (indyuk)</td>
+    <td onclick="speak('火鸡', 'zh-CN')">火鸡 (huǒ jī)</td>
+    <td onclick="speak('シチメンチョウ', 'ja')">シチメンチョウ (shichimenchou)</td>
+</tr>
+    </tbody>
+</table>
+
+<script>
+    function speak(text, lang) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        speechSynthesis.speak(utterance);
+    }
+
+    function playSound(url) {
+        if(url) {
+            const audio = new Audio(url);
+            audio.play();
+        } else {
+            alert("Som não disponível para este animal.");
+        }
+    }
+</script>
+
+</body>
+</html>
