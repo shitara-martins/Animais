@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfabeto Português com Sons</title>
+
+	<style>
+        @font-face {
+            font-family: 'Bouncy-thin';
+            src: url('Bouncy-thin.otf') format('opentype');
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            font-family: 'Bouncy-thin', sans-serif;
+            font-size: 42px; text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid black;
+        }
+        th {
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+        }
+        td:nth-child(1) {
+            font-family: 'Bouncy-thin', sans-serif;
+            background-color: #ffdddd; text-align: center;
+        }
+        td:nth-child(1) { background-color: #ffdddd; }
+        td:nth-child(2) { background-color: #ddffdd; }
+        td:nth-child(3) { background-color: #ddddff; }
+        td:nth-child(4) { background-color: #ffffcc; }
+        td:nth-child(5) { background-color: #ffccff; }
+        td:nth-child(6) { background-color: #ccffff; }
+        td:nth-child(7) { background-color: #ffd699; }
+		td:nth-child(8) { background-color: #cccca3; }
+        tr:nth-child(even) td:nth-child(1) { background-color: #ffeeee; }
+        tr:nth-child(even) td:nth-child(2) { background-color: #eeffee; }
+        tr:nth-child(even) td:nth-child(3) { background-color: #eeeeff; }
+        tr:nth-child(even) td:nth-child(4) { background-color: #ffffe6; }
+        tr:nth-child(even) td:nth-child(5) { background-color: #ffe6ff; }
+        tr:nth-child(even) td:nth-child(6) { background-color: #e6ffff; }
+        tr:nth-child(even) td:nth-child(7) { background-color: #ffe6cc; }
+		tr:nth-child(even) td:nth-child(8) { background-color: #f2f2c1; }
+		@media (max-width: 600px) {
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+<script>
+        function speakText(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+			
+    </script>
+</head>
+<body>
+    <h2>Alfabeto Português</h2>
+    <table>
+        <tr>
+            <th onclick="speakText('Letra')">Letra</th>
+            <th onclick="speakText('Nome da letra')">Nome</th>
+            <th onclick="speakText('Fonema (AFI - Alfabeto fonético internacional)')">Fonema (AFI)</th>
+            <th onclick="speakText('Animal')">Animal</th>
+            <th onclick="speakText('Objeto')">Objeto</th>
+            <th onclick="speakText('Nome Próprio')">Nome Próprio</th>
+            <th onclick="speakText('País')">País</th>
+			<th onclick="speakText('Abstração')">Abstração</th>
+        </tr>
+		
+        <script>
+		const letras = [
+                { letra: "A", nome: "a", fonema: "a", animal: "Anta", objeto: "Avião", nomeProprio: "Ana", pais: "Angola", abstracao: "Amor" },
+                { letra: "B", nome: "bê", fonema: "b", animal: "Baleia", objeto: "Bola", nomeProprio: "Bruno", pais: "Brasil", abstracao: "Beleza" },
+                { letra: "C", nome: "cê", fonema: ["k","s"], animal: "Cavalo", objeto: "Cela", nomeProprio: "Carlos, O Menino-Gato", pais: "Canadá", abstracao: "Calma" },
+                { letra: "D", nome: "dê", fonema: "d", animal: "Dinossauro", objeto: "Dado", nomeProprio: "Diego", pais: "Dinamarca", abstracao: "Dureza" },
+                { letra: "E", nome: "é", fonema: "e", animal: "Elefante", objeto: "Escova", nomeProprio: "Elaine", pais: "Equador", abstracao: "Esperança" },
+                { letra: "F", nome: "efe", fonema: "f", animal: "Foca", objeto: "Faca", nomeProprio: "Fernando", pais: "França", abstracao: "Felicidade" },
+                { letra: "G", nome: "gê", fonema: "g", animal: "Gato", objeto: "Garrafa", nomeProprio: "Gabriela", pais: "Guatemala", abstracao: "Ganância" },
+                { letra: "H", nome: "agá", fonema: " ", animal: "Hiena", objeto: "Helicóptero", nomeProprio: "Henrique", pais: "Honduras", abstracao: "Harmonia" },
+                { letra: "I", nome: "i", fonema: "i", animal: "Iguana", objeto: "Impressora", nomeProprio: "Isabela", pais: "Itália", abstracao: "Imaginação" },
+                { letra: "J", nome: "jóta", fonema: "ʒ", animal: "Jacaré", objeto: "Janela", nomeProprio: "João", pais: "Japão", abstracao: "Justiça" },
+                { letra: "K", nome: "cá", fonema: "k", animal: "Kiwi (ave)", objeto: "Ketchup", nomeProprio: "Karen", pais: "Kuwait", abstracao: "Koinonia" },
+                { letra: "L", nome: "ele", fonema: "l", animal: "Leão", objeto: "Lápis", nomeProprio: "Laura, A Corujita", pais: "Luxemburgo", abstracao: "Liberdade" },
+                { letra: "M", nome: "eme", fonema: "m", animal: "Macaco", objeto: "Mesa", nomeProprio: "Mariana", pais: "México", abstracao: "Medo" },
+                { letra: "N", nome: "ene", fonema: "n", animal: "Narval", objeto: "Navio", nomeProprio: "Nicolas", pais: "Noruega", abstracao: "Nobreza" },
+                { letra: "O", nome: "ó", fonema: "o", animal: "Ornitorrinco", objeto: "Óculos", nomeProprio: "Olívia", pais: "Omã", abstracao: "Ódio" },
+                { letra: "P", nome: "pê", fonema: "p", animal: "Pato", objeto: "Panela", nomeProprio: "Paulo", pais: "Peru", abstracao: "Paz" },
+                { letra: "Q", nome: "quê", fonema: "k", animal: "Quati", objeto: "Quebra-cabeça", nomeProprio: "Quitéria", pais: "Qatar", abstracao: "Qualidade" },
+                { letra: "R", nome: "érre", fonema: "ʁ", animal: "Raposa", objeto: "Relógio", nomeProprio: "Ricardo", pais: "Romênia", abstracao: "Respeito" },
+                { letra: "S", nome: "ésse", fonema: "s", animal: "Sapo", objeto: "Sapato", nomeProprio: "Sofia", pais: "Suécia", abstracao: "Sabedoria" },
+                { letra: "T", nome: "tê", fonema: "t", animal: "Tigre", objeto: "Tesoura", nomeProprio: "Thom, O Sonic Brasileiro", pais: "Tailândia", abstracao: "Tenura" },
+                { letra: "U", nome: "u", fonema: "u", animal: "Urso", objeto: "Urna", nomeProprio: "Úrsula", pais: "Uruguai", abstracao: "União" },
+                { letra: "V", nome: "vê", fonema: "v", animal: "Vaca", objeto: "Vaso", nomeProprio: "Vinícius", pais: "Venezuela", abstracao: "Vontade" },
+                { letra: "W", nome: "dábliu", fonema: ["v","w"], animal: "Wombat", objeto: "Webcam", nomeProprio: "William", pais: "Wallis e Futuna", abstracao: "Workaholismo" },
+                { letra: "X", nome: "xis", fonema: ["ʃ"], animal: "Xaréu", objeto: "Xilofone", nomeProprio: "Xavier", pais: "Xangai (região)", abstracao: "Xenofobia" },
+                { letra: "Y", nome: "ípsilon", fonema: "i", animal: "Yak", objeto: "Yo-yo", nomeProprio: "Yasmin", pais: "Iémen", abstracao: "Yuppismo" },
+                { letra: "Z", nome: "zê", fonema: "z", animal: "Zebra", objeto: "Zíper", nomeProprio: "Zeca", pais: "Zâmbia", abstracao: "Zelo" },
+            ];
+
+            function speakBoth(texts) {
+                const synth = window.speechSynthesis;
+				texts.forEach(text => {
+					const utterance = new SpeechSynthesisUtterance(text);
+					utterance.lang = "pt-BR";
+					synth.speak(utterance);
+            });
+}
+			
+			
+
+            function getAudioPath(fonema) {
+                return `fonemas/${fonema}.mp3`;
+            }
+
+            letras.forEach(({ letra, nome, fonema, animal, objeto, nomeProprio, pais, abstracao }) => {
+                let fonemaHTML = Array.isArray(fonema) ? fonema.map(f => `<a href="#" onclick="playSound(getAudioPath('${f}'))">/${f}/</a>`).join(' ou ') : `<a href="#" onclick="playSound(getAudioPath('${fonema}'))">/${fonema}/</a>`;
+                
+                document.write(`
+                    <tr>
+                        <td>${letra}</td>
+                        <td><a href="#" onclick="speakText('${nome}')">${nome}</a></td>
+                        <td>${fonemaHTML}</td>
+                        <td><a href="#" onclick="speakText('${animal}')">${animal}</a></td>
+                        <td><a href="#" onclick="speakText('${objeto}')">${objeto}</a></td>
+                        <td><a href="#" onclick="speakText('${nomeProprio}')">${nomeProprio}</a></td>
+                        <td><a href="#" onclick="speakText('${pais}')">${pais}</a></td>
+                        <td><a href="#" onclick="speakText('${abstracao}')">${abstracao}</a></td>
+                    </tr>
+                `);
+            });
+			
+			function playSound(url) {
+                const audio = new Audio(url);
+                audio.play();
+            }
+        </script>
+    </table>
+</body>
+</html>
