@@ -5,39 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
     <style>
+        @font-face {
+            font-family: 'Bouncy';
+            src: url('Bouncy.otf') format('opentype');
+        }
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
+            background: url('back.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
         }
         h1 {
-            font-size: 36px;
+            font-size: 46px;
         }
-        .button-container {
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
             margin-top: 20px;
         }
-        .button {
+        .image-wrapper {
+            position: relative;
             display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            margin: 10px;
-            cursor: pointer;
         }
-        .button:hover {
-            background-color: #0056b3;
+        .image-wrapper img {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .image-wrapper .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: yellow;
+            font-family: 'Bouncy', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .image-wrapper:hover .overlay {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <h1>Bem-vindo ao Portal Educacional</h1>
-    <div class="button-container">
-        <a href="animais.html" class="button">Ir para Animais</a>
-        <a href="alfabeto.html" class="button">Ir para Alfabeto</a>
+    <div class="image-container">
+        <div class="image-wrapper">
+            <a href="animais.html">
+                <img src="gato.jpg" alt="Animais">
+                <div class="overlay">ANIMAIS</div>
+            </a>
+        </div>
+        <div class="image-wrapper">
+            <a href="alfabeto.html">
+                <img src="letra.jpg" alt="Alfabeto">
+                <div class="overlay">ALFABETO</div>
+            </a>
+        </div>
     </div>
 </body>
 </html>
