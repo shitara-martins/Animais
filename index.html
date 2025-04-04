@@ -12,18 +12,23 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 50px;
+            margin: 30px;
             background: url('back.png') no-repeat center center fixed;
             background-size: cover;
-            color: grey;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 20px;
+            box-sizing: border-box;
         }
-        h1 {
-            font-size: 46px;
+        .logo {
+            width: 300px;
+            margin: 0 auto 40px auto;
         }
         .image-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 100px;
             margin-top: 20px;
         }
         .image-wrapper {
@@ -37,44 +42,39 @@
             border-radius: 10px;
         }
         .image-wrapper .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            color: #262626);
-            font-family: 'Bouncy', sans-serif;
-            font-size: 38px;
-            font-weight: bold;
-            display: flex;
-            align-items: top;
-            justify-content: center;
-            text-align: center;
-            border-radius: 10px;
-            opacity: 1;
-            transition: opacity 0.3s;
+            display: none;
         }
-        .image-wrapper:hover .overlay {
-            opacity: 0.8;
+        .footer-img {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
         }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Portal Educacional</h1>
+    <img src="carlos.png" alt="Título" class="logo">
     <div class="image-container">
         <div class="image-wrapper">
             <a href="animais.html">
                 <img src="gato.png" alt="Animais">
-                <div class="overlay">ANIMAIS</div>
             </a>
         </div>
         <div class="image-wrapper">
             <a href="alfabeto.html">
                 <img src="letra.png" alt="Alfabeto">
-                <div class="overlay">ALFABETO</div>
             </a>
         </div>
     </div>
+
+    <script>
+        const imagens = ["estuda.png", "sabe.png", "aprende.png", "conhece.png"];
+        const indice = Math.floor(Math.random() * imagens.length);
+        const img = document.createElement("img");
+        img.src = imagens[indice];
+        img.className = "footer-img";
+        document.body.appendChild(img);
+    </script>
 </body>
 </html>
