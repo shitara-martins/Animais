@@ -62,11 +62,11 @@
         }
     </style>
 <script>
-        function speakText(text) {
+        function speakText(text, event) {
+            event.preventDefault();
             const utterance = new SpeechSynthesisUtterance(text);
             speechSynthesis.speak(utterance);
         }
-			
     </script>
 </head>
 <body>
@@ -76,15 +76,15 @@
 	
 	
     <table>
-        <tr>
-            <th onclick="speakText('Letra')">Letra</th>
-            <th onclick="speakText('Nome da letra')">Nome</th>
-            <th onclick="speakText('Fonema (AFI - Alfabeto fonético internacional)')">Fonema (AFI)</th>
-            <th onclick="speakText('Animal')">Animal</th>
-            <th onclick="speakText('Objeto')">Objeto</th>
-            <th onclick="speakText('Nome Próprio')">Nome Próprio</th>
-            <th onclick="speakText('País')">País</th>
-			<th onclick="speakText('Abstração')">Abstração</th>
+       <tr>
+            <th onclick="speakText('Letra', event)">Letra</th>
+            <th onclick="speakText('Nome', event)">Nome</th>
+            <th onclick="speakText('Fonema (AFI)', event)">Fonema (AFI)</th>
+            <th onclick="speakText('Animal', event)">Animal</th>
+            <th onclick="speakText('Objeto', event)">Objeto</th>
+            <th onclick="speakText('Nome Próprio', event)">Nome Próprio</th>
+            <th onclick="speakText('País', event)">País</th>
+            <th onclick="speakText('Substantivo Abstrato', event)">Substantivo Abstrato</th>
         </tr>
 		
         <script>
@@ -133,23 +133,26 @@
             }
 
             letras.forEach(({ letra, nome, fonema, animal, objeto, nomeProprio, pais, abstracao }) => {
-                let fonemaHTML = Array.isArray(fonema) ? fonema.map(f => `<a href="#" onclick="playSound(getAudioPath('${f}'))">/${f}/</a>`).join(' ou ') : `<a href="#" onclick="playSound(getAudioPath('${fonema}'))">/${fonema}/</a>`;
-                
+                let fonemaHTML = Array.isArray(fonema)
+                    ? fonema.map(f => `<a href="#" onclick="playSound(getAudioPath('${f}'), event)">/${f}/</a>`).join(' ou ')
+                    : `<a href="#" onclick="playSound(getAudioPath('${fonema}'), event)">/${fonema}/</a>`;
+
                 document.write(`
                     <tr>
                         <td>${letra}</td>
-                        <td><a href="#" onclick="speakText('${nome}')">${nome}</a></td>
-                        <td>${fonemaHTML}</td>
-                        <td><a href="#" onclick="speakText('${animal}')">${animal}</a></td>
-                        <td><a href="#" onclick="speakText('${objeto}')">${objeto}</a></td>
-                        <td><a href="#" onclick="speakText('${nomeProprio}')">${nomeProprio}</a></td>
-                        <td><a href="#" onclick="speakText('${pais}')">${pais}</a></td>
-                        <td><a href="#" onclick="speakText('${abstracao}')">${abstracao}</a></td>
+                        <td onclick="speakText('${nome}', event)">${nome}</td>
+						<td >${fonemaHTML}</td>
+                        <td onclick="speakText('${animal}', event)">${animal}</td>
+                        <td onclick="speakText('${objeto}', event)">${objeto}</td>
+                        <td onclick="speakText('${nomeProprio}', event)">${nomeProprio}</td>
+                        <td onclick="speakText('${pais}', event)">${pais}</td>
+                        <td onclick="speakText('${abstracao}', event)">${abstracao}</td>
                     </tr>
                 `);
             });
 			
 			function playSound(url) {
+				event.preventDefault();
                 const audio = new Audio(url);
                 audio.play();
             }
