@@ -533,20 +533,41 @@
 </table>
 
 <script>
-    function speak(text, lang) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = lang;
-        speechSynthesis.speak(utterance);
+  let antonioVoice = null;
+
+  function setVoice() {
+    const voices = speechSynthesis.getVoices();
+    antonioVoice = voices.find(voice =>
+      voice.name.includes("Microsoft Antonio") &&
+      voice.lang === "pt-BR"
+    );
+  }
+
+  if (typeof speechSynthesis !== 'undefined') {
+    speechSynthesis.onvoiceschanged = setVoice;
+    setVoice(); // chamar imediatamente também
+  }
+
+  function speak(text, lang) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+
+    // Se for português do Brasil, usar a voz Antonio se disponível
+    if (lang === "pt-BR" && antonioVoice) {
+      utterance.voice = antonioVoice;
     }
 
-    function playSound(url) {
-        if(url) {
-            const audio = new Audio(url);
-            audio.play();
-        } else {
-            alert("Som não disponível para este animal.");
-        }
+    speechSynthesis.speak(utterance);
+  }
+
+  function playSound(url) {
+    if (url) {
+      const audio = new Audio(url);
+      audio.play();
+    } else {
+      alert("Som não disponível para este animal.");
     }
+  }
 </script>
 
 </body>
