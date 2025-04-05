@@ -59,22 +59,65 @@
             table, th, td {
                 font-size: 14px;
             }
+			a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 28px;
+      }
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      h2 {
+        font-size: 24px;
+      }
+      table, th, td {
+        font-size: 13px;
+      }
         }
     </style>
-<script>
-        function speakText(text, event) {
-            event.preventDefault();
-            const utterance = new SpeechSynthesisUtterance(text);
-            speechSynthesis.speak(utterance);
+	
+	<script>
+    let antonioVoice = null;
+
+    function setVoice() {
+        const voices = speechSynthesis.getVoices();
+        antonioVoice = voices.find(voice =>
+            voice.name.includes("Microsoft Antonio") && voice.lang === "pt-BR"
+        );
+    }
+
+    // Aguarda carregamento das vozes
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = setVoice;
+    }
+
+    function speakText(text, event) {
+        if (event) event.preventDefault();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'pt-BR';
+        if (antonioVoice) {
+            utterance.voice = antonioVoice;
         }
-    </script>
+        speechSynthesis.speak(utterance);
+    }
+</script>
+
+
 </head>
 <body>
 <b><a href="index.html" class="button">↩Voltar à Página Inicial</a></b>
-    <h2>Alfabeto Português</h2>
+   
+	<h2>Alfabeto do Português</h2>
 	<p>Clique para ouvir os sons e palavras</p>
-	
-	
+		
     <table>
        <tr>
             <th onclick="speakText('Letra', event)">Letra</th>
@@ -102,7 +145,7 @@
                 { letra: "K", nome: "cá", fonema: "k", animal: "Kiwi (ave)", objeto: "Ketchup", nomeProprio: "Karen", pais: "Kuwait", abstracao: "Koinonia" },
                 { letra: "L", nome: "ele", fonema: "l", animal: "Leão", objeto: "Lápis", nomeProprio: "Laura, A Corujita", pais: "Luxemburgo", abstracao: "Liberdade" },
                 { letra: "M", nome: "eme", fonema: "m", animal: "Macaco", objeto: "Mesa", nomeProprio: "Mariana", pais: "México", abstracao: "Medo" },
-                { letra: "N", nome: "ene", fonema: "n", animal: "Narval", objeto: "Navio", nomeProprio: "Nicolas", pais: "Noruega", abstracao: "Nobreza" },
+                { letra: "N", nome: "ene", fonema: "n", animal: "Narval", objeto: "Navio", nomeProprio: "Nicolau", pais: "Noruega", abstracao: "Nobreza" },
                 { letra: "O", nome: "ô", fonema: "o", animal: "Ornitorrinco", objeto: "Óculos", nomeProprio: "Olívia", pais: "Omã", abstracao: "Ódio" },
                 { letra: "P", nome: "pê", fonema: "p", animal: "Pato", objeto: "Panela", nomeProprio: "Paulo", pais: "Peru", abstracao: "Paz" },
                 { letra: "Q", nome: "quê", fonema: "k", animal: "Quati", objeto: "Quebra-cabeça", nomeProprio: "Quitéria", pais: "Qatar", abstracao: "Qualidade" },
@@ -112,7 +155,7 @@
                 { letra: "U", nome: "u", fonema: "u", animal: "Urso", objeto: "Urna", nomeProprio: "Úrsula", pais: "Uruguai", abstracao: "União" },
                 { letra: "V", nome: "vê", fonema: "v", animal: "Vaca", objeto: "Vaso", nomeProprio: "Vinícius", pais: "Venezuela", abstracao: "Vontade" },
                 { letra: "W", nome: "dábliu", fonema: ["v","w"], animal: "Wombat", objeto: "Webcam", nomeProprio: "William", pais: "Wallis e Futuna", abstracao: "Workaholismo" },
-                { letra: "X", nome: "xis", fonema: ["ʃ"], animal: "Xaréu", objeto: "Xilofone", nomeProprio: "Xavier", pais: "Xangai (região)", abstracao: "Xenofobia" },
+                { letra: "X", nome: "xis", fonema: ["ʃ"], animal: "Xaréu", objeto: "Xilofone", nomeProprio: "Xavier", pais: "Xangai", abstracao: "Xenofobia" },
                 { letra: "Y", nome: "ípsilon", fonema: "i", animal: "Yak", objeto: "Yo-yo", nomeProprio: "Yasmin", pais: "Iémen", abstracao: "Yuppismo" },
                 { letra: "Z", nome: "zê", fonema: "z", animal: "Zebra", objeto: "Zíper", nomeProprio: "Zeca", pais: "Zâmbia", abstracao: "Zelo" },
             ];
