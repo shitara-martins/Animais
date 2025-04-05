@@ -1,4 +1,4 @@
-const CACHE_NAME = "educacional-v1";
+const CACHE_NAME = "Carlos Estuda";
 const urlsToCache = [
   "index.html",
   "back.png",
