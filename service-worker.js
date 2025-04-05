@@ -1,4 +1,4 @@
-const CACHE_NAME = "Carlos Estuda";
+const CACHE_NAME = "Carlos";
 const urlsToCache = [
   "index.html",
   "back.png",
